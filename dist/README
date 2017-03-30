@@ -1,0 +1,54 @@
+DATASET
+=======
+
+dataset.py contains the dataset implementation to fetch and read categories
+from the newsgroup dataset.
+
+For an example see the bottom of the dataset.py file.
+
+FEATURE SELECTION
+=================
+
+- feature-selection.py - Run the Feature selection process. This process trains a number of
+  		         different Logistic Regression classifiers using term count and
+			 tf-idf weights with different combinations of n-grams and outputs it
+			 to stdout.
+- feature-selection-plot.py - Used to plot the above data.
+- feature-selection-pca.py - Used to create the PCA plot.
+- feature-selection-dominant.py - Used to display words with the heighest weights for Logistic Regression.
+
+The algorithms used for feature selection are mainly from scikit-learn.
+
+K-MEANS IMPLEMENTATION
+======================
+
+The K-Means implementation resides in kmeans.py. For an example see the bottom
+of the kmeans.py file.
+
+To run:
+
+    python kmeans.py > result.txt
+    python kmeans.py plot result.txt
+
+
+
+COMPARISON TO OTHER CLUSTERING ALGORITHMS
+=========================================
+
+When comparing K-means to other clustering algorithms, we used the Scikit-learn implementation of
+all the algorithms, for equality in computational efficiency.
+
+ - goodness-birch.py - Fits Birch, and calculates homogeneity, completeness, v-measure and mistake rate
+		    and prints it. 
+To run and save output to a file:
+
+    python -u goodness-birch.py | tee results/birch.csv
+
+Repeat the same steps for hac, kmeans and mbkmeans.
+
+With the results in results/<algorithm>.csv, run all-plot.py to plot the mistake rate of each algorithm.
+Make sure to save the output with the same names as usd in all-plot.py
+
+
+
+
